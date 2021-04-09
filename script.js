@@ -14,7 +14,7 @@ var SymbolsPass = '"~`!@#$%^&*()_-+={[}]|\:;<,>.?/"'.split("")
 function writePassword() {
     function UserOptions() {
         var length = parseInt(prompt("Select a number betweem 8 and 128 to set the password lenght"))
-        console.log(length)
+        //console.log(length)
             //Kill in case of prompt cancel.
         if (!length) return;
         // if user don't comply the criteria
@@ -30,7 +30,7 @@ function writePassword() {
         //     return UserOptions();
         // }
 
-        // Define Var's for Use of Characters.
+        // Confirm method for users responds and get a boolean.
         var UseLower = confirm("Do you wnat to include LowerCase Characters")
 
         var UseUpper = confirm("Do you want to include UpperCase Characters")
@@ -39,6 +39,7 @@ function writePassword() {
 
         var UseSymbols = confirm("Do you want to include Symbols")
 
+        // if all this aren't true then show message and go back to main func.
         if (!UseLower && !UseUpper && !UseNumbers && !UseSymbols) {
             alert("you need to select at least one criteria.")
             return UserOptions()
@@ -52,18 +53,23 @@ function writePassword() {
             number: UseNumbers,
             symbols: UseSymbols,
         }
+        // return Values abvobe
         return UserAnswers;
     };
 
     //UserOptions()
 
+    // Gen pass fuunc begins
     function generatePassword() {
+        // define var oprion, will use parameters from UserOptions function
         var options = UserOptions();
-        console.log(options)
+        //console.log(options)
 
+        // password pool var, will store results from for loops
         var passwordpool = [];
-        console.log(passwordpool)
+        //console.log(passwordpool)
 
+        // For loops to get values of the vars defined on global scope and store in passpool. 
         if (options.lower) {
             for (let index = 0; index < LowerCasePass.length; index++) {
                 passwordpool.push(LowerCasePass[index]);
@@ -86,19 +92,21 @@ function writePassword() {
                     }
 
                     var finalPassword = [];
-
+                    // final math will store the results from passpool in final password var
                     for (let index = 0; index < options.length; ++index) {
                         var randpass = Math.floor(Math.random() * passwordpool.length);
-                        console.log(randpass)
+                        //console.log(randpass)
                         finalPassword.push(passwordpool[randpass])
                 }
 
-                console.log(finalPassword)
-                console.log(options.length)
+                //console.log(finalPassword)
+                //console.log(options.length)
 
-                // 
+                //result in Final pass will .join the DEF var to final result. 
                 var DefPassword = finalPassword.join('')
-                console.log(DefPassword)
+                //console.log(DefPassword)
+
+                // Return final result of pass function. 
                 return DefPassword;
     };
             
