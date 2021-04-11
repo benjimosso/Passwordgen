@@ -59,56 +59,56 @@ function writePassword() {
 
     //UserOptions()
 
-    // // Gen pass fuunc begins
-    // function generatePassword() {
-    //     // define var oprion, will use parameters from UserOptions function
-    //     var options = UserOptions();
-    //     //console.log(options)
+    // Gen pass fuunc begins
+    function generatePassword() {
+        // define var oprion, will use parameters from UserOptions function
+        var options = UserOptions();
+        //console.log(options)
 
-    //     // password pool var, will store results from for loops
-    //     var passwordpool = [];
-    //     //console.log(passwordpool)
+        // password pool var, will store results from for loops
+        var passwordpool = [];
+        //console.log(passwordpool)
 
-    //     // For loops to get values of the vars defined on global scope and store in passpool. 
-    //     if (options.lower) {
-    //         for (let index = 0; index < LowerCasePass.length; index++) {
-    //             passwordpool.push(LowerCasePass[index]);
-    //         }
-    //     }
-    //         if (options.upper) {
-    //             for (let index = 0; index < UpperCasePass.length; index++) {
-    //                 passwordpool.push(UpperCasePass[index]);
-    //             }
-    //         }
-    //             if (options.number) {
-    //                 for (let index = 0; index < NumbersPass.length; index++) {
-    //                     passwordpool.push(NumbersPass[index]);
-    //                 }
-    //             }
-    //                 if (options.symbols) {
-    //                     for (let index = 0; index < SymbolsPass.length; index++) {
-    //                         passwordpool.push(SymbolsPass[index]);
-    //                     }
-    //                 }
+        // For loops to get values of the vars defined on global scope and store in passpool. 
+        if (options.lower) {
+            for (let index = 0; index < LowerCasePass.length; index++) {
+                passwordpool.push(LowerCasePass[index]);
+            }
+        }
+        if (options.upper) {
+            for (let index = 0; index < UpperCasePass.length; index++) {
+                passwordpool.push(UpperCasePass[index]);
+            }
+        }
+        if (options.number) {
+            for (let index = 0; index < NumbersPass.length; index++) {
+                passwordpool.push(NumbersPass[index]);
+            }
+        }
+        if (options.symbols) {
+            for (let index = 0; index < SymbolsPass.length; index++) {
+                passwordpool.push(SymbolsPass[index]);
+            }
+        }
 
-    //                 var finalPassword = [];
-    //                 // final math will store the results from passpool in final password var
-    //                 for (let index = 0; index < options.length; ++index) {
-    //                     var randpass = Math.floor(Math.random() * passwordpool.length);
-    //                     //console.log(randpass)
-    //                     finalPassword.push(passwordpool[randpass])
-    //             }
+        var finalPassword = [];
+        // final math will store the results from passpool in final password var
+        for (let index = 0; index < options.length; ++index) {
+            var randpass = Math.floor(Math.random() * passwordpool.length);
+            //console.log(randpass)
+            finalPassword.push(passwordpool[randpass])
+        }
 
-    //             //console.log(finalPassword)
-    //             //console.log(options.length)
+        //console.log(finalPassword)
+        //console.log(options.length)
 
-    //             //result in Final pass will .join the DEF var to final result. 
-    //             var DefPassword = finalPassword.join('')
-    //             //console.log(DefPassword)
+        //result in Final pass will .join the DEF var to final result. 
+        var DefPassword = finalPassword.join('')
+            //console.log(DefPassword)
 
-    //             // Return final result of pass function. 
-    //             return DefPassword;
-    // };
+        // Return final result of pass function. 
+        return DefPassword;
+    };
 
 
 
@@ -132,42 +132,42 @@ generateBtn.addEventListener("click", writePassword);
 
 //Alternative password Generator wothout prompt options.
 //Generate password Function.
-function generatePassword() {
-    return LowerCaseGen() + UpperCaseGen() + NumerCaseGen() + SymbolCaseGen();
-}
+// function generatePassword() {
+//     return LowerCaseGen() + UpperCaseGen() + NumerCaseGen() + SymbolCaseGen();
+// }
 
-console.log(generatePassword())
+// console.log(generatePassword())
 
-//Define variable for Genereatior Functions
-const GenFunc = {
-    lower: LowerCaseGen(),
-    upper: UpperCaseGen(),
-    number: NumerCaseGen(),
-    symbols: SymbolCaseGen(),
-};
+// //Define variable for Genereatior Functions
+// const GenFunc = {
+//     lower: LowerCaseGen(),
+//     upper: UpperCaseGen(),
+//     number: NumerCaseGen(),
+//     symbols: SymbolCaseGen(),
+// };
 
-console.log(GenFunc);
-// Functions for character Generation 
-// Resource https://tools.oratory.com/altcodes.html
-function LowerCaseGen() {
-    var LowerCase = 'abcdefghijklmnopqrstuvwxyz'
-    return LowerCase[Math.floor(Math.random() * LowerCase.length)]
-}
-var LowerCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
-var longitud = 15
+// console.log(GenFunc);
+// // Functions for character Generation 
+// // Resource https://tools.oratory.com/altcodes.html
+// function LowerCaseGen() {
+//     var LowerCase = 'abcdefghijklmnopqrstuvwxyz'
+//     return LowerCase[Math.floor(Math.random() * LowerCase.length)]
+// }
+// var LowerCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+// var longitud = 15
 
-function UpperCaseGen() {
+// function UpperCaseGen() {
 
-    return Math.floor(Math.random() * longitud)
-}
-console.log(LowerCase)
+//     return Math.floor(Math.random() * longitud)
+// }
+// console.log(LowerCase)
 
-function NumerCaseGen() {
-    var LowerCase = '0123456789'
-    return LowerCase[Math.floor(Math.random() * LowerCase.length)]
-}
+// function NumerCaseGen() {
+//     var LowerCase = '0123456789'
+//     return LowerCase[Math.floor(Math.random() * LowerCase.length)]
+// }
 
-function SymbolCaseGen() {
-    var LowerCase = '"~`!@#$%^&*()_-+={[}]|\:;<,>.?/"'
-    return LowerCase[Math.floor(Math.random() * LowerCase.length)]
-}
+// function SymbolCaseGen() {
+//     var LowerCase = '"~`!@#$%^&*()_-+={[}]|\:;<,>.?/"'
+//     return LowerCase[Math.floor(Math.random() * LowerCase.length)]
+// }
