@@ -16,4 +16,4 @@ Github Publication:
 https://benjimosso.github.io/Passwordgen/
 
 Screenshot:
-![Screenshot](https://github.com/benjimosso/Passwordgen/blob/main/Screenshot.png)
+![Screenshot](https://github.com/benjimosso/Passwordgen/blob/main/Screenshot.PNG)
